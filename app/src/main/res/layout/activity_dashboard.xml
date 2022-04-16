@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".DashboardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_left"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="@dimen/margin_left" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/karla_bold"
+            android:text="@string/hello"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/font_size_large"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@id/topGuide" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodMorning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_smaller"
+            android:fontFamily="@font/karla_light"
+            android:text="@string/good_morning"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/font_size_small"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@id/tvHello" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMoney"
+            android:layout_width="@dimen/money"
+            android:layout_height="@dimen/money"
+            android:layout_marginStart="@dimen/money_margin_start"
+            android:src="@drawable/money"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGoodMorning"
+            app:layout_constraintStart_toEndOf="@+id/tvGoodMorning"
+            app:layout_constraintTop_toTopOf="@+id/tvGoodMorning" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/profile_img"
+            android:layout_height="@dimen/profile_img"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/profile_bg"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGoodMorning"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintTop_toTopOf="@+id/tvHello" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.52" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuidelineRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.47" />
+
+        <View
+            android:id="@+id/vMainCard"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="@dimen/card_top_margin"
+            android:background="@drawable/card"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/tvGoodMorning" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalSaving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/total_top_margin"
+            android:fontFamily="@font/karla_bold"
+            android:text="@string/total_savings"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintEnd_toEndOf="@+id/vMainCard"
+            app:layout_constraintStart_toStartOf="@+id/vMainCard"
+            app:layout_constraintTop_toBottomOf="@id/tvHello"
+            app:layout_constraintTop_toTopOf="@+id/vMainCard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/total_top_margin"
+            android:fontFamily="@font/karla_medium"
+            android:text="@string/total_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_larger"
+            app:layout_constraintEnd_toEndOf="@+id/vMainCard"
+            app:layout_constraintStart_toStartOf="@+id/vMainCard"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalSaving" />
+
+        <View
+            android:id="@+id/vLeftCard"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/left_card_top_margin"
+            android:layout_weight="0.4"
+            android:background="@drawable/left_card"
+            app:layout_constraintEnd_toEndOf="@id/verticalGuidelineRight"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/vMainCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLeftCard"
+            android:layout_width="@dimen/left_card_icon_size"
+            android:layout_height="@dimen/left_card_icon_size"
+            android:layout_marginStart="@dimen/margin_left"
+            android:src="@drawable/ic_left_card"
+            app:layout_constraintBottom_toBottomOf="@id/vLeftCard"
+            app:layout_constraintStart_toStartOf="@+id/vLeftCard"
+            app:layout_constraintTop_toTopOf="@+id/vLeftCard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/karla_regular"
+            android:text="@string/add_money"
+            android:textColor="@color/card_text"
+            android:textSize="@dimen/card_text"
+            app:layout_constraintBottom_toBottomOf="@id/vLeftCard"
+            app:layout_constraintEnd_toEndOf="@+id/vLeftCard"
+            app:layout_constraintStart_toEndOf="@id/ivLeftCard"
+            app:layout_constraintTop_toTopOf="@id/vLeftCard" />
+
+        <View
+            android:id="@+id/vRightCard"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/left_card_top_margin"
+            android:clickable="true"
+            android:background="@drawable/right_card"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/verticalGuidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/vMainCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRightCard"
+            android:layout_width="@dimen/left_card_icon_size"
+            android:layout_height="@dimen/left_card_icon_size"
+            android:layout_marginStart="@dimen/margin_left"
+            android:src="@drawable/ic_right_card"
+            app:layout_constraintBottom_toBottomOf="@id/vRightCard"
+            app:layout_constraintStart_toStartOf="@+id/vRightCard"
+            app:layout_constraintTop_toTopOf="@+id/vRightCard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWithdraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/karla_regular"
+            android:text="@string/withdraw"
+            android:textColor="@color/card_text"
+            android:textSize="@dimen/card_text"
+            app:layout_constraintBottom_toBottomOf="@id/ivRightCard"
+            app:layout_constraintEnd_toEndOf="@id/vRightCard"
+            app:layout_constraintStart_toEndOf="@id/ivRightCard"
+            app:layout_constraintTop_toTopOf="@id/ivRightCard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMiddleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/middle_text_margin_top"
+            android:fontFamily="@font/karla_bold"
+            android:text="@string/middle_title"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/card_text"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@id/vLeftCard" />
+
+        <View
+            android:id="@+id/vEmergencyCard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/emergency_card"
+            android:layout_marginTop="@dimen/left_card_top_margin"
+            android:background="@drawable/emergency_card"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/tvMiddleTitle" />
+
+        <View
+            android:id="@+id/vEmergencyCircle"
+            android:layout_width="@dimen/circle"
+            android:layout_height="@dimen/circle"
+            android:layout_marginStart="@dimen/circle_margin_start"
+            android:background="@drawable/circle_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/vEmergencyCard"
+            app:layout_constraintStart_toStartOf="@+id/vEmergencyCard"
+            app:layout_constraintTop_toTopOf="@+id/vEmergencyCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEmergencyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wallet"
+            app:layout_constraintBottom_toBottomOf="@id/vEmergencyCircle"
+            app:layout_constraintEnd_toEndOf="@+id/vEmergencyCircle"
+            app:layout_constraintStart_toStartOf="@+id/vEmergencyCircle"
+            app:layout_constraintTop_toTopOf="@+id/vEmergencyCircle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/circle_margin_start"
+            android:fontFamily="@font/karla_light"
+            android:text="@string/save_emergency"
+            android:textColor="@color/card_text"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintBottom_toBottomOf="@id/vEmergencyCard"
+            app:layout_constraintStart_toEndOf="@id/ivEmergencyIcon"
+            app:layout_constraintTop_toTopOf="@id/vEmergencyCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/circle_margin_start"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@id/vEmergencyCircle"
+            app:layout_constraintEnd_toEndOf="@+id/vEmergencyCard"
+            app:layout_constraintTop_toTopOf="@+id/vEmergencyCircle" />
+
+        <View
+            android:id="@+id/vInvestCard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/emergency_card"
+            android:layout_marginTop="@dimen/money"
+            android:background="@drawable/emergency_card"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/vEmergencyCard" />
+
+        <View
+            android:id="@+id/vInvestCircle"
+            android:layout_width="@dimen/circle"
+            android:layout_height="@dimen/circle"
+            android:layout_marginStart="@dimen/circle_margin_start"
+            android:background="@drawable/circle_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/vInvestCard"
+            app:layout_constraintStart_toStartOf="@+id/vInvestCard"
+            app:layout_constraintTop_toTopOf="@+id/vInvestCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivInvestIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/diagram"
+            app:layout_constraintBottom_toBottomOf="@id/vInvestCircle"
+            app:layout_constraintEnd_toEndOf="@+id/vInvestCircle"
+            app:layout_constraintStart_toStartOf="@+id/vInvestCircle"
+            app:layout_constraintTop_toTopOf="@+id/vInvestCircle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/circle_margin_start"
+            android:fontFamily="@font/karla_light"
+            android:text="@string/invest"
+            android:textColor="@color/card_text"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintBottom_toBottomOf="@id/vInvestCard"
+            app:layout_constraintStart_toEndOf="@id/ivInvestIcon"
+            app:layout_constraintTop_toTopOf="@id/vInvestCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/circle_margin_start"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@id/vInvestCircle"
+            app:layout_constraintEnd_toEndOf="@+id/vInvestCard"
+            app:layout_constraintTop_toTopOf="@+id/vInvestCircle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBottomTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/more_money"
+            android:fontFamily="@font/karla_bold"
+            android:text="@string/more_money"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/card_text"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@id/vInvestCard" />
+
+        <View
+            android:id="@+id/vMoreMoneyCard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/emergency_card"
+            android:layout_marginTop="@dimen/money"
+            android:background="@drawable/emergency_card"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/tvBottomTitle" />
+
+        <View
+            android:id="@+id/vMoreMoneyCircle"
+            android:layout_width="@dimen/circle"
+            android:layout_height="@dimen/circle"
+            android:layout_marginStart="@dimen/circle_margin_start"
+            android:background="@drawable/circle_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/vMoreMoneyCard"
+            app:layout_constraintStart_toStartOf="@+id/vMoreMoneyCard"
+            app:layout_constraintTop_toTopOf="@+id/vMoreMoneyCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMoreMoneyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/more_money"
+            app:layout_constraintBottom_toBottomOf="@id/vMoreMoneyCircle"
+            app:layout_constraintEnd_toEndOf="@+id/vMoreMoneyCircle"
+            app:layout_constraintStart_toStartOf="@+id/vMoreMoneyCircle"
+            app:layout_constraintTop_toTopOf="@+id/vMoreMoneyCircle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/circle_margin_start"
+            android:fontFamily="@font/karla_light"
+            android:text="@string/more_money_"
+            android:textColor="@color/card_text"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintBottom_toBottomOf="@id/vMoreMoneyCard"
+            app:layout_constraintStart_toEndOf="@id/ivMoreMoneyIcon"
+            app:layout_constraintTop_toTopOf="@id/vMoreMoneyCard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/circle_margin_start"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@id/vMoreMoneyCircle"
+            app:layout_constraintEnd_toEndOf="@+id/vMoreMoneyCard"
+            app:layout_constraintTop_toTopOf="@+id/vMoreMoneyCircle" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_bottom"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/vMoreMoneyCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

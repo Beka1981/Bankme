@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Lesson homework3</string>
+    <string name="sing_up"><font color="#001533">Do you not have a BankMe account? </font> <font color="#0066F6">Sign up here</font></string>
+    <string name="login">LOG IN</string>
+    <string name="top_title">Sign into your \nAccount</string>
+    <string name="top_small_title">Log into your BankMe account</string>
+    <string name="phone_number">Phone number</string>
+    <string name="phone_number_hint">Enter phone number</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Enter password</string>
+    <string name="forgotten_pass"><font color="#001533">Have you forgotten your password?, </font> <font color="#0066F6"> \nclick here to recover it</font></string>
+    <string name="hello">Hello</string>
+    <string name="good_morning">Good morning, remember to save today</string>
+    <string name="total_savings">Total Savings</string>
+    <string name="total_number">N50,000.10</string>
+    <string name="add_money">Add money</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="middle_title">Get your money working for you</string>
+    <string name="save_emergency">Save for an emergency</string>
+    <string name="invest">Invest your money</string>
+    <string name="more_money">Ways to earn more money</string>
+    <string name="more_money_">Invite your friends \nand get a bonus</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="congratulations_text"><font color="#999999">Your order for </font> <font color="#001533"> N1,000 </font> <font color="#999999">withdrawal was placed \nsuccessfully! A text message will be sent to your phone \ncontaining the ORDER NUMBER of your transaction, \nphone number and address of the nearest agent to \ncomplete your transaction.</font></string>
+    <string name="close">CLOSE</string>
+    <string name="withdraw_">WITHDRAW</string>
+    <string name="balance_title">Balance: 50,000</string>
+    <string name="amount">Amount</string>
+    <string name="amount_hint">Enter amount</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_name_hint">Enter customer name</string>
+    <string name="pin">Pin</string>
+    <string name="pin_hint">Enter pin</string>
+    <string name="field_required">all fields are required!</string>
+    <string name="invalid_password">Invalid password!</string>
+
+</resources>

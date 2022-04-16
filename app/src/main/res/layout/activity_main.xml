@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/margin_left"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_end="@dimen/margin_left" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/karla_bold"
+        android:text="@string/top_title"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/top_title_size"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@id/topGuide" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:fontFamily="@font/karla_light"
+        android:text="@string/top_small_title"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_phone_number"
+        android:fontFamily="@font/karla_regular"
+        android:text="@string/phone_number"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleSmall" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPhone"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/et_height"
+        android:layout_marginTop="@dimen/margin_top_small"
+        android:background="@drawable/edittext_background_drawable"
+        android:hint="@string/phone_number_hint"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:nextFocusDown="@+id/etPassword"
+        android:paddingStart="@dimen/margin_left"
+        android:paddingEnd="@dimen/margin_right"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/font_size_small"
+        app:layout_constraintEnd_toEndOf="@id/rightGuide"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_medium"
+        android:fontFamily="@font/karla_regular"
+        android:text="@string/password"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@id/etPhone" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/et_height"
+        android:layout_marginTop="@dimen/margin_top_small"
+        android:background="@drawable/edittext_background_drawable"
+        android:hint="@string/password_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_left"
+        android:paddingEnd="@dimen/margin_right"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/font_size_small"
+        app:layout_constraintEnd_toEndOf="@id/rightGuide"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvForgottenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:fontFamily="@font/karla_regular"
+        android:text="@string/forgotten_pass"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintStart_toStartOf="@id/leftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:background="@drawable/button_blue_bg"
+        android:fontFamily="@font/karla_bold"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintBottom_toTopOf="@+id/tvBottomTitle"
+        app:layout_constraintEnd_toEndOf="@id/rightGuide"
+        app:layout_constraintStart_toStartOf="@id/leftGuide" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBottomTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_text_bottom"
+        android:fontFamily="@font/karla_light"
+        android:text="@string/sing_up"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuide" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
