@@ -16,6 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- ეცადე რომ ბევრი guideline ს გარეშე გამოხვიდე ხოლმე
+        როგორც წესი 2 ზე მეტი არ გჭირდება -->
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/leftGuide"
             android:layout_width="wrap_content"

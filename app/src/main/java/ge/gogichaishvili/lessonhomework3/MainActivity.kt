@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import ge.gogichaishvili.lessonhomework3.databinding.ActivityMainBinding
 
 
@@ -15,7 +16,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
+        val view = binding.root /*
+         ზედმეტი ცვლადია view  მეხსიერების ალოკაციაა ფუჭი, პირდაპირ გადააწოდე ხოლმე setContentView ს binding.root
+          და ყველგნაც ეცადე ზედმეტი ცვლადების გარეშე გამოხვიდე
+          */
         setContentView(view)
 
         binding.btnLogin.setOnClickListener {
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                         intent.putExtra("username", binding.etPhone.text.toString().trim())
                         startActivity(intent)
                     } else {
-                        binding.etPassword.error = getString(R.string.invalid_password)
+                        binding.etPassword.error = getString(R.string.invalid_password) //
                         binding.etPassword.setBackgroundResource(R.drawable.edittext_bg_red)
                     }
                 }
@@ -83,6 +87,12 @@ class MainActivity : AppCompatActivity() {
 
                 }
             })
+            /*
+            აქ შეგიძლია ლამბდა გამოიყენო
+               binding.etPassword.doOnTextChanged { text, start, before, count ->
+
+                           }
+             */
 
 
         }
